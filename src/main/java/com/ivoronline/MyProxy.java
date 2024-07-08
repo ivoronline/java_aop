@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class Proxy {
+public class MyProxy {
 
   @Pointcut("within(com.ivoronline.*)")
   public void logMethodPointCut() { }
