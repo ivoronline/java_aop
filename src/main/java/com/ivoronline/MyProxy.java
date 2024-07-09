@@ -17,7 +17,8 @@ public class MyProxy {
   public void logBeforeMethodCall(JoinPoint joinPoint) throws Throwable {
     Signature signature  = joinPoint.getSignature();
     String    methodName = signature.getName();
-    System.out.println("Before   Method: " + methodName);
+    Class     methodClass = joinPoint.getTarget().getClass();
+    System.out.println("Before   Method: " + methodName + " => " + methodClass);
   }
   
   @After("logMethodPointCut()")
